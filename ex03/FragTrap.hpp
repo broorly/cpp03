@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/14 22:14:09 by mrafik            #+#    #+#             */
+/*   Updated: 2023/01/14 22:28:04 by mrafik           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#pragma once
 #include<iostream>
 #include"ClapTrap.hpp"
 
-class FragTrap : public  ClapTrap
+class FragTrap :virtual public  ClapTrap
 {
 private:
 	std::string Name;

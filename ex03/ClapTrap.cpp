@@ -1,21 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/14 22:13:56 by mrafik            #+#    #+#             */
+/*   Updated: 2023/01/14 22:32:15 by mrafik           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include"ScavTrap.hpp"
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "default constructor called" << std :: endl;
+	std::cout << "ClapTrap default constructor called" << std :: endl;
 }
 
 ClapTrap::ClapTrap(std::string Name)
 {
-	std::cout << "constructor called" << std :: endl;
-	this->Name = Name;
+	std::cout << "ClapTrap constructor with parametre called" << std :: endl;
+	this->Name = Name + "_clap_name";
 	this->Attack_damage = 0;
 	this->Energy_points = 10;
 	this->Hit_points = 10;
 }
 ClapTrap::~ClapTrap()
 {
-	std::cout << "destructor called" << std::endl; 
+	std::cout << "ClapTrap destructor called" << std::endl; 
 }
 
 void ClapTrap::set_Hit_points(int hit)
