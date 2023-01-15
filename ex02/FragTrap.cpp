@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:14:31 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/14 22:14:32 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/15 13:19:49 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,5 @@ std::string FragTrap::get_Name() const
 }
 void FragTrap:: highFivesGuys(void) const
 {
-	std::cout<< "FragTrap" << this->Name << " high five" << std::endl;
+	std::cout<< "FragTrap " << this->Name << " high five" << std::endl;
 }
