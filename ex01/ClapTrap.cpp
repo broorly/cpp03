@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 17:59:14 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/15 13:12:46 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/16 19:31:35 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,51 +25,26 @@ ClapTrap::ClapTrap(std::string Name)
 	this->Energy_points = 10;
 	this->Hit_points = 10;
 }
+
+ClapTrap::ClapTrap(const ClapTrap &ClapTrap) {
+	std::cout << "Copy constructor called" << std::endl;
+	*this = ClapTrap;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap& ClapTrap) {
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->Name = ClapTrap.Name;
+	this->Attack_damage = ClapTrap.Attack_damage;
+	this->Energy_points = ClapTrap.Energy_points;
+	this->Hit_points = ClapTrap.Hit_points;
+	return (*this);
+}
+
 ClapTrap::~ClapTrap()
 {
 	std::cout << "destructor called" << std::endl; 
 }
 
-void ClapTrap::set_Hit_points(int hit)
-{
-	this->Hit_points = hit;
-}
-
-int ClapTrap::get_Hit_points() const
-{
-	return(this->Hit_points);
-}
-
-void ClapTrap::set_Attack_damage(int hit)
-{
-	this->Attack_damage = hit;
-}
-
-int ClapTrap::get_Attack_damaget() const
-{
-	return(this->Attack_damage);
-}
-
-void ClapTrap::set_Energy_points(int hit)
-{
-	this->Energy_points = hit;
-}
-
-int ClapTrap::get_Energy_points() const
-{
-	return(this->Energy_points);
-}
-
-
-void ClapTrap::set_Name(std::string Name)
-{
-	this->Name = Name;
-}
-
-std::string ClapTrap::get_Name() const
-{
-	return(this->Name);
-}
 
 void ClapTrap :: attack(const std::string& target){
 	

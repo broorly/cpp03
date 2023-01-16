@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:14:06 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/14 22:14:07 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/16 19:45:56 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,46 +33,18 @@ FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap destructor called" << std::endl; 
 }
-
-void FragTrap::set_Hit_points(int hit)
-{
-	this->Hit_points = hit;
+FragTrap::FragTrap(const FragTrap &FragTrap) {
+	std::cout << "Copy constructor called" << std::endl;
+	*this = FragTrap;
 }
 
-int FragTrap::get_Hit_points() const
-{
-	return(this->Hit_points);
-}
-
-void FragTrap::set_Attack_damage(int hit)
-{
-	this->Attack_damage = hit;
-}
-
-int FragTrap::get_Attack_damaget() const
-{
-	return(this->Attack_damage);
-}
-
-void FragTrap::set_Energy_points(int hit)
-{
-	this->Energy_points = hit;
-}
-
-int FragTrap::get_Energy_points() const
-{
-	return(this->Energy_points);
-}
-
-
-void FragTrap::set_Name(std::string Name)
-{
-	this->Name = Name;
-}
-
-std::string FragTrap::get_Name() const
-{
-	return(this->Name);
+FragTrap &FragTrap::operator=(const FragTrap& FragTrap) {
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->Name = FragTrap.Name;
+	this->Attack_damage = FragTrap.Attack_damage;
+	this->Energy_points = FragTrap.Energy_points;
+	this->Hit_points = FragTrap.Hit_points;
+	return (*this);
 }
 void FragTrap:: highFivesGuys(void) const
 {

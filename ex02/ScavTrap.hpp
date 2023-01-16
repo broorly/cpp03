@@ -6,24 +6,24 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:14:20 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/14 22:14:21 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/16 19:38:07 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include<iostream>
 #include"ClapTrap.hpp"
 
 class ScavTrap : public  ClapTrap
 {
-private:
-	std::string Name;
-	int Hit_points;
-	int Energy_points;
-	int Attack_damage;
+	
 public:
 	ScavTrap(std::string Name);
 	ScavTrap();
 	~ScavTrap();
+	ScavTrap(const ScavTrap &ScavTrap);
+  	ScavTrap &operator=(const ScavTrap& ScavTrap);
+	
 
 	void set_Hit_points(int hit);
 	int get_Hit_points() const;

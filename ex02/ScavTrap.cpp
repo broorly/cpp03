@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:14:23 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/14 22:14:24 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/16 16:48:22 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,19 @@ ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called" << std::endl; 
 }
+ScavTrap::ScavTrap(const ScavTrap &ScavTrap) {
+	std::cout << "Copy constructor called" << std::endl;
+	*this = ScavTrap;
+}
 
+ScavTrap &ScavTrap::operator=(const ScavTrap& ScavTrap) {
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->Name = ScavTrap.get_Name();
+	this->Attack_damage = ScavTrap.get_Attack_damaget();
+	this->Energy_points = ScavTrap.get_Energy_points();
+	this->Hit_points = ScavTrap.get_Hit_points();
+	return (*this);
+}
 void ScavTrap::set_Hit_points(int hit)
 {
 	this->Hit_points = hit;

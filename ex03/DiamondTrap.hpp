@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:13:51 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/14 23:43:53 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/16 19:38:47 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ private:
 public:
 	DiamondTrap(std::string Name);
 	~DiamondTrap();
+	DiamondTrap(const DiamondTrap &DiamondTrap);
+  	DiamondTrap &operator=(const DiamondTrap& DiamondTrap);
+
 	void set_Hit_points(int hit);
 	int get_Hit_points() const;
 	int get_Energy_points() const ;

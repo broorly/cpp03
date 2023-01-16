@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:14:01 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/14 23:43:38 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/16 19:45:48 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 DiamondTrap::DiamondTrap(std::string Name)
 {
-	std::cout <<"DiamondTrap default constructor called" << std::endl;
+	std::cout <<"DiamondTrap constructor with parametre  called" << std::endl;
 	this->Name = Name;
-	this->Hit_points = this->FragTrap::get_Hit_points();
-	this->Energy_points = this->ScavTrap::get_Energy_points();
-	this->Attack_damage = this->FragTrap::get_Attack_damaget();
+	this->Hit_points = this->FragTrap::Hit_points;
+	this->Energy_points = this->ScavTrap::Energy_points;
+	this->Attack_damage = this->FragTrap::Attack_damage;
 }
 
 DiamondTrap::~DiamondTrap()
@@ -28,6 +28,19 @@ DiamondTrap::~DiamondTrap()
 void DiamondTrap :: whoAmI() const
 {
 
+}
+DiamondTrap::DiamondTrap(const DiamondTrap &DiamondTrap) {
+	std::cout << "Copy constructor called" << std::endl;
+	*this = DiamondTrap;
+}
+
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap& DiamondTrap) {
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->Name = DiamondTrap.get_Name();
+	this->Attack_damage = DiamondTrap.get_Attack_damaget();
+	this->Energy_points = DiamondTrap.get_Energy_points();
+	this->Hit_points = DiamondTrap.get_Hit_points();
+	return (*this);
 }
 void DiamondTrap :: attack(std :: string target)
 {

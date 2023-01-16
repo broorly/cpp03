@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:14:15 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/14 22:14:16 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/16 19:45:34 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,47 +33,20 @@ ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called" << std::endl; 
 }
-
-void ScavTrap::set_Hit_points(int hit)
-{
-	this->Hit_points = hit;
+ScavTrap::ScavTrap(const ScavTrap &ScavTrap) {
+	std::cout << "Copy constructor called" << std::endl;
+	*this = ScavTrap;
 }
 
-int ScavTrap::get_Hit_points() const
-{
-	return(this->Hit_points);
+ScavTrap &ScavTrap::operator=(const ScavTrap& ScavTrap) {
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->Name = ScavTrap.Name;
+	this->Attack_damage = ScavTrap.Attack_damage;
+	this->Energy_points = ScavTrap.Energy_points;
+	this->Hit_points = ScavTrap.Hit_points;
+	return (*this);
 }
 
-void ScavTrap::set_Attack_damage(int hit)
-{
-	this->Attack_damage = hit;
-}
-
-int ScavTrap::get_Attack_damaget() const
-{
-	return(this->Attack_damage);
-}
-
-void ScavTrap::set_Energy_points(int hit)
-{
-	this->Energy_points = hit;
-}
-
-int ScavTrap::get_Energy_points() const
-{
-	return(this->Energy_points);
-}
-
-
-void ScavTrap::set_Name(std::string Name)
-{
-	this->Name = Name;
-}
-
-std::string ScavTrap::get_Name() const
-{
-	return(this->Name);
-}
 void ScavTrap :: attack(const std::string& target){
 	
 	if(this->Energy_points > 0)
