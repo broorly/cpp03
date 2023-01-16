@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:13:56 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/16 19:43:17 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/16 20:53:24 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap()
 ClapTrap::ClapTrap(std::string Name)
 {
 	std::cout << "ClapTrap constructor with parametre called" << std :: endl;
-	this->Name = Name + "_clap_name";
+	this->Name = Name ;
 	this->Attack_damage = 0;
 	this->Energy_points = 10;
 	this->Hit_points = 10;

@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:14:18 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/16 19:38:24 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/16 20:35:48 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include<iostream>
 #include"ClapTrap.hpp"
 
-class ScavTrap : public  ClapTrap
+class ScavTrap : virtual public  ClapTrap
 {
 public:
 	ScavTrap(std::string Name);

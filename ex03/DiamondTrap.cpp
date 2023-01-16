@@ -6,7 +6,7 @@
 /*   By: mrafik <mrafik@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 22:14:01 by mrafik            #+#    #+#             */
-/*   Updated: 2023/01/16 19:45:48 by mrafik           ###   ########.fr       */
+/*   Updated: 2023/01/16 20:54:22 by mrafik           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ DiamondTrap::DiamondTrap(std::string Name)
 {
 	std::cout <<"DiamondTrap constructor with parametre  called" << std::endl;
 	this->Name = Name;
-	this->Hit_points = this->FragTrap::Hit_points;
-	this->Energy_points = this->ScavTrap::Energy_points;
-	this->Attack_damage = this->FragTrap::Attack_damage;
+	ClapTrap::Name = Name+ "_clap_name";
+	Hit_points = 100;
+	Energy_points = 50;
+	Attack_damage = 30;
 }
 
 DiamondTrap::~DiamondTrap()
@@ -27,6 +28,8 @@ DiamondTrap::~DiamondTrap()
 }
 void DiamondTrap :: whoAmI() const
 {
+	std::cout<<"DiamondTrap Name  " << Name << std::endl;
+	std::cout<< "ClapTrap Name  "<<ClapTrap::Name << std::endl;
 
 }
 DiamondTrap::DiamondTrap(const DiamondTrap &DiamondTrap) {
@@ -36,53 +39,14 @@ DiamondTrap::DiamondTrap(const DiamondTrap &DiamondTrap) {
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap& DiamondTrap) {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->Name = DiamondTrap.get_Name();
-	this->Attack_damage = DiamondTrap.get_Attack_damaget();
-	this->Energy_points = DiamondTrap.get_Energy_points();
-	this->Hit_points = DiamondTrap.get_Hit_points();
+	Name = DiamondTrap.Name;
+	Attack_damage = DiamondTrap.Attack_damage;
+	Energy_points = DiamondTrap.Energy_points;
+	Hit_points = DiamondTrap.Hit_points;
 	return (*this);
 }
+
 void DiamondTrap :: attack(std :: string target)
 {
 	this->ScavTrap::attack(target);
-}
-void DiamondTrap::set_Hit_points(int hit)
-{
-	this->Hit_points = hit;
-}
-
-int DiamondTrap::get_Hit_points() const
-{
-	return(this->Hit_points);
-}
-
-void DiamondTrap::set_Attack_damage(int hit)
-{
-	this->Attack_damage = hit;
-}
-
-int DiamondTrap::get_Attack_damaget() const
-{
-	return(this->Attack_damage);
-}
-
-void DiamondTrap::set_Energy_points(int hit)
-{
-	this->Energy_points = hit;
-}
-
-int DiamondTrap::get_Energy_points() const
-{
-	return(this->Energy_points);
-}
-
-
-void DiamondTrap::set_Name(std::string Name)
-{
-	this->Name = Name;
-}
-
-std::string DiamondTrap::get_Name() const
-{
-	return(this->Name);
 }
